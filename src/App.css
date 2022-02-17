@@ -1,0 +1,46 @@
+body {
+  background-color: whitesmoke;
+  color: #585a5e;
+}
+
+button {
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mainContainer {
+  text-align: center;
+  border: 3px solid teal;
+  margin: 80px;
+  padding-bottom: 20px;
+}
+
+.mapContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.lampsContainer {
+  margin: 10px;
+}
+
+.limitWarning {
+  color:tomato;
+  font-weight: 600;
+}
+
+.titleControl {
+  font-weight: 500;
+  color: #46484b;
+}
+
+.consumption {
+  font-weight: 300;
+}
