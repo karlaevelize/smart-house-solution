@@ -14,11 +14,27 @@ button {
   cursor: pointer;
 }
 
+form {
+  margin: 50px;
+}
+
+.loginInput {
+  padding: 12px 20px;
+  margin: 8px 0px;
+  width: 350px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
 .mainContainer {
   text-align: center;
   border: 3px solid teal;
   margin: 80px;
   padding-bottom: 20px;
+  min-height: 500px;
 }
 
 .mapContainer {
@@ -43,4 +59,9 @@ button {
 
 .consumption {
   font-weight: 300;
+}
+
+.navbar {
+  margin: 10px;
+  text-align: right;
 }

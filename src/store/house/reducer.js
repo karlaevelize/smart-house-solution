@@ -1,17 +1,21 @@
 import { calculateTotalConsumption } from "../../functions";
 
 const initialState = {
-  lamps: [
-    { id: 1, power: false },
-    { id: 2, power: true },
-    { id: 3, power: false },
-    { id: 4, power: true }],
-  radio: { genre: "classic rock", power: false },
-  thermostat: 20,
+  lamps: [],
+  radio: { genre: "", power: false },
+  thermostat: null,
 };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case "house": {
+      return {
+        ...state,
+        lamps: [ ...action.payload.lamps],
+        radio: { ...action.payload.radio },
+        thermostat: action.payload.thermostat       
+      }
+    }
     case "house/lampControl": {
 
       const updatedLamps = state.lamps.map(lamp => {

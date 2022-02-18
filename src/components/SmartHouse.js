@@ -1,6 +1,10 @@
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
 import { selectLamps, selectRadio, selectThermostat } from "../store/house/selector"
+import { selectToken } from "../store/user/selectors"
 import { lampControl, radioControl, genreControl, thermostatControl } from "../store/house/actions"
+import { fetchHouse } from "../store/house/actions"
 import Consumption from "./Consumption"
 
 export default function SmartHouse(){
@@ -10,8 +14,21 @@ export default function SmartHouse(){
   const lamps = useSelector(selectLamps)
   const radio = useSelector(selectRadio)
   const thermostat = useSelector(selectThermostat)
+  const token = useSelector(selectToken)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!token) {
+      navigate("/login")
+    }
+  }, [token])
 
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchHouse)
+  }, [])
 
   return(
     <div className="mainContainer">

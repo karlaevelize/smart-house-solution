@@ -1,0 +1,1 @@
+export const selectToken = (reduxState) => reduxState.user.token

@@ -1,16 +1,13 @@
-import { combineReducers, createStore } from "redux";
-import houseReducer from "./house/reducer";
+import { createStore, applyMiddleware, compose } from "redux";
+import ReduxThunk from "redux-thunk";
+import reducer from "./rootReducer";
 
-const enhancer = window.__REDUX_DEVTOOLS_EXTENSION__
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
   ? window.__REDUX_DEVTOOLS_EXTENSION__()
-  : x => x;
+  : (x) => x;
 
-const store = createStore(
-  //always register your reducer here
-  combineReducers({
-    house: houseReducer
-  }),
-  enhancer
-);
+const enhancer = compose(applyMiddleware(ReduxThunk), devTools);
+
+const store = createStore(reducer, enhancer);
 
 export default store;
