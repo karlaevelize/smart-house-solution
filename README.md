@@ -4,7 +4,7 @@
 - Global State Management
 - Take the state out of component level and place it in the store
 
-## Why Redux?
+## Why Redux? (Students answer)
 
 - Passing the props
 - Useless props for some components
