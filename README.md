@@ -16,7 +16,7 @@
 
 ## Redux Terminology
 
-- Actions: object with type and payload. Type is a string. Payload is data.
+- Actions: object with type and payload. Type is a string. Payload is your data.
 
 ```js
 {
