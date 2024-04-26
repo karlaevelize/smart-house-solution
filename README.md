@@ -1,4 +1,4 @@
-## What is Redux?
+# What is Redux?
 
 - State Management
 - Global State Management
